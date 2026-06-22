@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 40px 35px;
+  width: 360px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.card h1 {
+  font-size: 1.8rem;
+  margin-bottom: 28px;
+  letter-spacing: 1px;
+}
+
+.search-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 11px 15px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.search-box input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.search-box button {
+  padding: 11px 18px;
+  background: #e94560;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-box button:hover {
+  background: #c73652;
+}
+
+.result h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.result p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 6px;
+}
+
+#temperature {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.error {
+  color: #ff6b6b;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.hidden {
+  display: none;
+}
