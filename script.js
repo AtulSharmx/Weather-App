@@ -6,7 +6,6 @@ function getWeather() {
   var resultDiv = document.getElementById('weatherResult');
   var errorDiv = document.getElementById('errorMsg');
 
-  // pehle dono hide karo
   resultDiv.classList.add('hidden');
   errorDiv.classList.add('hidden');
 
@@ -14,14 +13,11 @@ function getWeather() {
 
   var url = 'https://api.weatherapi.com/v1/current.json?key=' + apiKey + '&q=' + city + '&aqi=no';
 
-  // API se weather data la rahe hai bhai
   fetch(url)
     .then(function(response) {
       return response.json();
     })
     .then(function(data) {
-
-      // shehar ka naam galat hai toh error dikhao
       if (data.error) {
         if (data.error.code === 1006) {
           errorDiv.textContent = '❌ City nahi mila! Spelling check karo.';
@@ -44,7 +40,6 @@ function getWeather() {
     });
 }
 
-// Enter key se bhi search ho jaye
 document.getElementById('cityInput').addEventListener('keypress', function(e) {
   if (e.key === 'Enter') {
     getWeather();
