@@ -1,12 +1,12 @@
-# 🌤️ Simple Weather App
+# Simple weather app
 
 A simple weather app that shows live temperature and weather description for any city using the **WeatherAPI**.
 
-## How to Run
+## How to run
 
 1. Get a **free API key** from [weatherapi.com](https://www.weatherapi.com/my/)
 2. Open `script.js` and replace the key in line 1 with your own key
-3. Open `index.html` in your browser — that's it!
+3. Open `index.html` in your browser. That's it.
 
 ## Files
 
@@ -16,7 +16,7 @@ A simple weather app that shows live temperature and weather description for any
 | `style.css` | All the styling |
 | `script.js` | Weather logic + API call |
 
-## API Used
+## API used
 
 - **Provider:** [WeatherAPI.com](https://www.weatherapi.com/)
 - **Endpoint:** `https://api.weatherapi.com/v1/current.json`
