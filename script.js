@@ -5,19 +5,27 @@ function getWeather() {
 
   var resultDiv = document.getElementById('weatherResult');
   var errorDiv = document.getElementById('errorMsg');
+  var loadingDiv = document.getElementById('loading');
+  var searchBtn = document.getElementById('searchBtn');
 
   resultDiv.classList.add('hidden');
   errorDiv.classList.add('hidden');
 
   if (city === '') return;
 
-  var url = 'https://api.weatherapi.com/v1/current.json?key=' + apiKey + '&q=' + city + '&aqi=no';
+  loadingDiv.classList.remove('hidden');
+  searchBtn.disabled = true;
+
+  // A city name can contain spaces, commas or an ampersand, so it is encoded.
+  var url = 'https://api.weatherapi.com/v1/current.json?key=' + apiKey + '&q=' + encodeURIComponent(city) + '&aqi=no';
 
   fetch(url)
     .then(function(response) {
       return response.json();
     })
     .then(function(data) {
+      loadingDiv.classList.add('hidden');
+      searchBtn.disabled = false;
       if (data.error) {
         if (data.error.code === 1006) {
           errorDiv.textContent = '❌ City nahi mila! Spelling check karo.';
@@ -35,6 +43,8 @@ function getWeather() {
       resultDiv.classList.remove('hidden');
     })
     .catch(function() {
+      loadingDiv.classList.add('hidden');
+      searchBtn.disabled = false;
       errorDiv.textContent = '⚠️ Kuch toh gadbad hai. Internet check karo.';
       errorDiv.classList.remove('hidden');
     });

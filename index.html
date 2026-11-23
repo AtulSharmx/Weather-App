@@ -12,17 +12,19 @@
     <h1>🌤️ Weather App</h1>
 
     <div class="search-box">
-      <input type="text" id="cityInput" placeholder="Enter city name..." />
-      <button onclick="getWeather()">Search</button>
+      <input type="text" id="cityInput" placeholder="Enter city name..." aria-label="City name" />
+      <button type="button" id="searchBtn" onclick="getWeather()">Search</button>
     </div>
 
-    <div id="weatherResult" class="result hidden">
+    <div id="loading" class="loading hidden">Checking…</div>
+
+    <div id="weatherResult" class="result hidden" aria-live="polite">
       <h2 id="cityName"></h2>
       <p id="temperature"></p>
       <p id="description"></p>
     </div>
 
-    <div id="errorMsg" class="error hidden">
+    <div id="errorMsg" class="error hidden" role="alert">
       ❌ City nahi mila! Dobara try karo.
     </div>
   </div>
